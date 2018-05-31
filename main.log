@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.22)  31 MAY 2018 20:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.22)  31 MAY 2018 21:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -252,11 +252,7 @@ File: pppdftex.def 2015/09/18 v0.5d Pdfpages driver for pdfTeX (AM)
 LaTeX Warning: Unused global option(s):
     [headsepline].
 
-(./main.aux
-
-LaTeX Warning: Label `eqn:signal' multiply defined.
-
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
@@ -568,12 +564,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 [15
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 38.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 39.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 38.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -593,14 +589,12 @@ Chapter 5.
 [18
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 22--34
-
- []
-
-
-Overfull \hbox (37.11646pt too wide) in paragraph at lines 39--55
+Overfull \hbox (37.11646pt too wide) in paragraph at lines 40--56
  [] 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -619,7 +613,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 File: figures/exp_ret_yearly.pdf Graphic file (type pdf)
 
 <use figures/exp_ret_yearly.pdf>
-Package pdftex.def Info: figures/exp_ret_yearly.pdf used on input line 118.
+Package pdftex.def Info: figures/exp_ret_yearly.pdf used on input line 117.
 (pdftex.def)             Requested size: 352.31625pt x 209.70612pt.
 
 
@@ -629,7 +623,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: figures/exp_ret_llf10.pdf Graphic file (type pdf)
 
 <use figures/exp_ret_llf10.pdf>
-Package pdftex.def Info: figures/exp_ret_llf10.pdf used on input line 131.
+Package pdftex.def Info: figures/exp_ret_llf10.pdf used on input line 130.
 (pdftex.def)             Requested size: 352.31625pt x 209.70612pt.
 
 
@@ -642,9 +636,6 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [21]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -659,10 +650,10 @@ tiple pdfs with page group included in a single page
 File: figures/exp_ret_llf5.pdf Graphic file (type pdf)
 
 <use figures/exp_ret_llf5.pdf>
-Package pdftex.def Info: figures/exp_ret_llf5.pdf used on input line 146.
+Package pdftex.def Info: figures/exp_ret_llf5.pdf used on input line 144.
 (pdftex.def)             Requested size: 352.31625pt x 209.70612pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5490) has occurred while \output is active []
 
 
 
@@ -677,7 +668,7 @@ File: figures/tradingSig_yearly_llf10.pdf Graphic file (type pdf)
 
 <use figures/tradingSig_yearly_llf10.pdf>
 Package pdftex.def Info: figures/tradingSig_yearly_llf10.pdf used on input line
- 182.
+ 181.
 (pdftex.def)             Requested size: 234.8775pt x 139.6794pt.
 
 <figures/tradingRet_yearly_llf10.pdf, id=239, 714.23398pt x 424.68347pt>
@@ -685,10 +676,10 @@ File: figures/tradingRet_yearly_llf10.pdf Graphic file (type pdf)
 
 <use figures/tradingRet_yearly_llf10.pdf>
 Package pdftex.def Info: figures/tradingRet_yearly_llf10.pdf used on input line
- 182.
+ 181.
 (pdftex.def)             Requested size: 234.8775pt x 139.65996pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 180--185
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 179--184
 [][] 
  []
 
@@ -696,38 +687,35 @@ Overfull \hbox (23.99998pt too wide) in paragraph at lines 180--185
 File: figures/tradingSig_llf10.pdf Graphic file (type pdf)
 
 <use figures/tradingSig_llf10.pdf>
-Package pdftex.def Info: figures/tradingSig_llf10.pdf used on input line 194.
+Package pdftex.def Info: figures/tradingSig_llf10.pdf used on input line 193.
 (pdftex.def)             Requested size: 234.8775pt x 139.6794pt.
 
 <figures/tradingRet_llf10.pdf, id=241, 714.23398pt x 424.68347pt>
 File: figures/tradingRet_llf10.pdf Graphic file (type pdf)
 
 <use figures/tradingRet_llf10.pdf>
-Package pdftex.def Info: figures/tradingRet_llf10.pdf used on input line 194.
+Package pdftex.def Info: figures/tradingRet_llf10.pdf used on input line 193.
 (pdftex.def)             Requested size: 234.8775pt x 139.65996pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 192--197
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 191--196
 [][] 
  []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <figures/tradingSig_llf5.pdf, id=242, 715.03384pt x 425.60881pt>
 File: figures/tradingSig_llf5.pdf Graphic file (type pdf)
 
 <use figures/tradingSig_llf5.pdf>
-Package pdftex.def Info: figures/tradingSig_llf5.pdf used on input line 204.
+Package pdftex.def Info: figures/tradingSig_llf5.pdf used on input line 203.
 (pdftex.def)             Requested size: 234.8775pt x 139.80191pt.
 
 <figures/tradingRet_llf5.pdf, id=243, 715.15932pt x 425.60881pt>
 File: figures/tradingRet_llf5.pdf Graphic file (type pdf)
 
 <use figures/tradingRet_llf5.pdf>
-Package pdftex.def Info: figures/tradingRet_llf5.pdf used on input line 204.
+Package pdftex.def Info: figures/tradingRet_llf5.pdf used on input line 203.
 (pdftex.def)             Requested size: 234.8775pt x 139.77592pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 202--206
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 201--205
 [][] 
  []
 
@@ -745,56 +733,61 @@ pdf
 
 pdfTeX warning: pdflatex (file ./figures/tradingRet_yearly_llf10.pdf): PDF incl
 usion: multiple pdfs with page group included in a single page
->] <figures/pnls_yearly.pdf, id=307, 714.92406pt x 425.60881pt>
-File: figures/pnls_yearly.pdf Graphic file (type pdf)
+> <./figures/tradingSig_llf10.pdf
 
-<use figures/pnls_yearly.pdf>
-Package pdftex.def Info: figures/pnls_yearly.pdf used on input line 217.
-(pdftex.def)             Requested size: 352.31625pt x 209.74507pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/pnls_llf10.pdf, id=308, 714.92406pt x 425.60881pt>
-File: figures/pnls_llf10.pdf Graphic file (type pdf)
-
-<use figures/pnls_llf10.pdf>
-Package pdftex.def Info: figures/pnls_llf10.pdf used on input line 224.
-(pdftex.def)             Requested size: 352.31625pt x 209.74507pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/pnls_llf5.pdf, id=309, 714.92406pt x 425.60881pt>
-File: figures/pnls_llf5.pdf Graphic file (type pdf)
-
-<use figures/pnls_llf5.pdf>
-Package pdftex.def Info: figures/pnls_llf5.pdf used on input line 231.
-(pdftex.def)             Requested size: 352.31625pt x 209.74507pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[25 <./figures/tradingSig_llf10.pdf> <./figures/tradingRet_llf10.pdf
+pdfTeX warning: pdflatex (file ./figures/tradingSig_llf10.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+> <./figures/tradingRet_llf10.pdf
 
 pdfTeX warning: pdflatex (file ./figures/tradingRet_llf10.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
-> <./figures/tradingSig_llf5.pdf
+>] <figures/pnls_yearly.pdf, id=367, 714.92406pt x 425.60881pt>
+File: figures/pnls_yearly.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./figures/tradingSig_llf5.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
-> <./figures/tradingRet_llf5.pdf
+<use figures/pnls_yearly.pdf>
+Package pdftex.def Info: figures/pnls_yearly.pdf used on input line 216.
+(pdftex.def)             Requested size: 352.31625pt x 209.74507pt.
+
+<figures/pnls_llf10.pdf, id=368, 714.92406pt x 425.60881pt>
+File: figures/pnls_llf10.pdf Graphic file (type pdf)
+
+<use figures/pnls_llf10.pdf>
+Package pdftex.def Info: figures/pnls_llf10.pdf used on input line 223.
+(pdftex.def)             Requested size: 352.31625pt x 209.74507pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/pnls_llf5.pdf, id=369, 714.92406pt x 425.60881pt>
+File: figures/pnls_llf5.pdf Graphic file (type pdf)
+
+<use figures/pnls_llf5.pdf>
+Package pdftex.def Info: figures/pnls_llf5.pdf used on input line 230.
+(pdftex.def)             Requested size: 352.31625pt x 209.74507pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25 <./figures/tradingSig_llf5.pdf> <./figures/tradingRet_llf5.pdf
 
 pdfTeX warning: pdflatex (file ./figures/tradingRet_llf5.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
+> <./figures/pnls_yearly.pdf
+
+pdfTeX warning: pdflatex (file ./figures/pnls_yearly.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
 >]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 6893) has occurred while \output is active []
 
 
 
@@ -803,18 +796,18 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26 <./figures/pnls_yearly.pdf> <./figures/pnls_llf10.pdf
+[26 <./figures/pnls_llf10.pdf> <./figures/pnls_llf5.pdf
 
-pdfTeX warning: pdflatex (file ./figures/pnls_llf10.pdf): PDF inclusion: multip
-le pdfs with page group included in a single page
->]) (./conclusion.tex
+pdfTeX warning: pdflatex (file ./figures/pnls_llf5.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>]
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27 <./figures/pnls_llf5.pdf>]
+[27]) (./conclusion.tex
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -885,7 +878,7 @@ Overfull \hbox (109.9293pt too wide) in paragraph at lines 46--47
  _ 554 _ 0653-[]-[]the-[]potential-[]and-[]limitations-[]of .
  []
 
-) <declaration-originality.pdf, id=564, 597.55246pt x 845.07718pt>
+) <declaration-originality.pdf, id=563, 597.55246pt x 845.07718pt>
 File: declaration-originality.pdf Graphic file (type pdf)
 
 <use declaration-originality.pdf>
@@ -896,7 +889,7 @@ File: declaration-originality.pdf Graphic file (type pdf)
 Package pdftex.def Info: declaration-originality.pdf used on input line 113.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
-<declaration-originality.pdf, id=567, page=1, 597.55246pt x 845.07718pt>
+<declaration-originality.pdf, id=566, page=1, 597.55246pt x 845.07718pt>
 File: declaration-originality.pdf Graphic file (type pdf)
 
 <use declaration-originality.pdf, page 1>
@@ -935,39 +928,35 @@ Package pdftex.def Info: declaration-originality.pdf, page1 used on input line
 113.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
  [34 <./declaration-originality.pdf>]
-(./main.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+(./main.aux) ) 
 Here is how much of TeX's memory you used:
- 5067 strings out of 493029
- 73142 string characters out of 6136234
- 156302 words of memory out of 5000000
- 8411 multiletter control sequences out of 15000+600000
+ 5068 strings out of 493029
+ 73156 string characters out of 6136234
+ 152274 words of memory out of 5000000
+ 8412 multiletter control sequences out of 15000+600000
  31299 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,19n,44p,1300b,458s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
-imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pf
-b>
-Output written on main.pdf (44 pages, 1389991 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
+s/utmri8a.pfb>
+Output written on main.pdf (44 pages, 1390764 bytes).
 PDF statistics:
- 669 PDF objects out of 1000 (max. 8388607)
- 248 compressed objects within 3 object streams
+ 668 PDF objects out of 1000 (max. 8388607)
+ 247 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

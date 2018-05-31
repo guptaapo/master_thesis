@@ -6,10 +6,11 @@ In the previous chapter, we explained the method to calibrate the model and also
 \section{Trading strategy}
 Once we have predicted daily returns and standard deviation for the time period under observation, we can design a trading strategy based on these predictions. For example, the strategy can be as follows: 
 
-\par Using historical data from 1990-01-01 to 1999-12-31, we can predict expected values for 2000-01-01. Let the expected return on 2000-01-01 be 0.3\%. The trading strategy can be \textit{to buy}, if the return is higher than a threshold, \textit{to short}, if the predicted return is lower than negative of threshold and otherwise, do nothing. If threshold chosen is 0.1\% in this strategy, we will make buy on 2000-01-01. We can generate the decision signal for all required days.\newline
+\par Using historical data from 1990-01-01 to 1999-12-31, we can predict expected values for 2000-01-01. Let the expected return on 2000-01-01 be 0.3\%. The trading strategy can be \textit{to buy}, if the return is higher than a threshold, \textit{to short}, if the predicted return is lower than negative of threshold and otherwise, do nothing. If threshold chosen is 0.1\% in this strategy, we will buy on 2000-01-01. We can generate the decision signal for all required days.\newline
 
 For analysis, we can try different thresholds or even different strategies. Another option is to check with predicted return divided by standard deviation value, else we just buy without short, or do short without buy.
-Using the trading strategy, the daily returns for the whole period of observation can be obtained. We observe the daily return for the trading strategy and simultaneously count the number of trading days ($NT$), number of buy days ($NB$) and number of short days ($NS$) in the observation period. Let $r_{real}(t)$ be daily real returns, then the daily return of my trading strategy, $r(t)$, can be calculated as follow:
+Using the trading strategy, the daily returns for the whole period of observation can be obtained. We observe the daily return for the trading strategy and simultaneously count the number of trading days ($NT$), number of buy days ($NB$) and number of short days ($NS$) in the observation period. 
+Let $r_{real}(t)$ be daily real returns, then the daily return of my trading strategy, $r(t)$, can be calculated as follow:
 
 \begin{equation} \label{eqn:ret}
 r(t) = 
@@ -29,8 +30,8 @@ After recording the returns for our trading strategy, the next step is to evalua
 \item Linear Regression
 \end{enumerate}
 
-\subsection{Comparison with random strategies} \label{ssec:random}
-This test is used to confirm whether the model used and the trading strategy designed are able to add information while predicting. This is done by recording daily returns for randomly generated strategies. \par
+\subsection{Comparison with Random strategies} \label{ssec:random}
+This test is used to confirm whether the developed model and the trading strategy designed are able to add information while predicting. This is done by recording daily returns for randomly generated strategies. \par
 
 There can be many different ways to generate random signals. One of the common approaches is to select a time period ($T$) randomly within the observed period. Within the selected time period, we count the number of the buy days ($NB$) and the short days ($NS$). We calculate the total number of trading days ($NT$) as the sum of the buy and short days. The next step is to randomly select $NT$ days from the time period, $T$. From these $NT$ trading days, $NB$ days are selected randomly and labeled as buy days, while remaining $NT-NB$ days are labeled as short days. This can be seen as generating a random signal with the constraint of having the same number of buy and short days as in our trading strategy. Finally, we use this random signal with buy and short days to generate returns using equation \ref{eqn:ret}. The next step is to compare these daily returns against returns obtained from the trading strategy from our model. We compare the performance on the following indicators:
 
@@ -47,11 +48,11 @@ The returns are generated for a huge number of random signals and the performanc
 
 
 \subsection{Linear Regression}\label{ssec:linear}
-Once random strategy test is done, we used another option to validate the performance of the model. Using the recorded returns, $r(t)$, we run a linear regression model with \textit{FAMA-FRENCH 3 factors model}. The linear regression model is formulated as:
+Once random strategy test is done, we used another method to validate the performance of the model. Using the recorded returns, $r(t)$, we run a linear regression model with \textit{FAMA-FRENCH 3 factors model}. The linear regression model is formulated as:
 
 \begin{equation}
 r(t) = \alpha + \beta_{HML} \ HML(t) + \beta_{SMB} \ SMB(t) \ ,
 \end{equation}
 where $\alpha$, $\beta_{HML}$ and $\beta_{SMB}$ are coefficients, $HML(t)$ is high-minus-low (HML) factor and $SMB(t)$ is small-minus-big (SMB) factor. HML is the factor representing the effect of value of company, while SMB is the factor referred as the "size effect". \par
 
-If the regression model gives a significant intercept ($\alpha$), it means that something in the $r(t)$ cannot be explained by the 3 or 4 factors. If that is the case, it means there is some information in the model. In order to run the linear regression, we made use of the statistics model package in python.
+If the regression model gives a significant intercept ($\alpha$), it means that something in the $r(t)$ cannot be explained by the 3 factors. If that is the case, it means there is some information in the model. In order to run the linear regression, we made use of the \textit{statsmodel} package in python.

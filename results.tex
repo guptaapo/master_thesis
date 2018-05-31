@@ -258,30 +258,137 @@ The table \ref{table:random} shows the performance of our model in terms of Shar
 
 \section{Linear regression}
 The other method to evaluate our model is to run linear regression using with \textit{FAMA-FRENCH 3 factors model}, as explained in section \ref{ssec:linear}.
-We used the trading returns calculated as a dependent variable. The regression was run for all 3 cases. The regression was run using \textit{ols} functionality from \textit{statsmodels} python package. The results for Case I, II and III are shown in figure \ref{fig:lr_case1}, \ref{fig:lr_case2} and \ref{fig:lr_case3} respectively.
+We used the trading returns calculated as a dependent variable. The regression was run for all 3 cases. The regression was run using \textit{ols} functionality from \textit{statsmodels} python package. The results for Case I, II and III are shown in figure \ref{table:lr_case1}, \ref{table:lr_case2} and \ref{table:lr_case3} respectively.
 
-\begin{figure}[h!] 
+
+\begin{table}
+\center
+\begin{tabular}{|lc|lc|}
+\hline
+\textbf{Dep. Variable:}    &     exp\_ret      & \textbf{  R-squared:         } &     0.114   \\
+\textbf{Model:}            &       OLS        & \textbf{  Adj. R-squared:    } &     0.113   \\
+\textbf{Method:}           &  Least Squares   & \textbf{  F-statistic:       } &     128.7   \\
+\textbf{Log-Likelihood:    } &    6775.5 & \textbf{  Prob (F-statistic):} &  2.47e-53   \\
+\textbf{No. Observations:} &        2013      & \textbf{  AIC:               } & -1.355e+04  \\
+\textbf{Df Residuals:}     &        2010      & \textbf{  BIC:               } & -1.353e+04  \\
+\textbf{Df Model:}         &           2      & \textbf{                     } &             \\
+\hline
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{|l|cccccc|}
+\hline
+
+                   & \textbf{coef} & \textbf{std err} & \textbf{t} & \textbf{P$>$$|$t$|$} & \textbf{[0.025} & \textbf{0.975]}  \\
+\hline
+\textbf{Intercept} &       0.0002  &        0.000     &     0.947  &         0.344        &       -0.000    &        0.001     \\
+\textbf{SMB}       &       0.0046  &        0.000     &    12.882  &         0.000        &        0.004    &        0.005     \\
+\textbf{HML}       &       0.0039  &        0.000     &    10.062  &         0.000        &        0.003    &        0.005     \\
+\hline
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{|lc|lc|}
+\hline
+
+\textbf{Omnibus:}       & 224.686 & \textbf{  Durbin-Watson:     } &    2.035  \\
+\textbf{Prob(Omnibus):} &   0.000 & \textbf{  Jarque-Bera (JB):  } & 1629.264  \\
+\textbf{Skew:}          &  -0.242 & \textbf{  Prob(JB):          } &     0.00  \\
+\textbf{Kurtosis:}      &   7.381 & \textbf{  Cond. No.          } &     2.09  \\
+\hline
+\end{tabular}
+\caption{Regression Results for Case I}
+\label{table:lr_case1}
+\end{table}
+
+
+
+The table \ref{table:lr_case1} shows the value of alpha (excess return) to be 0.01\%, which is positive. Also, the coefficients of the two factors, SMB and HML, are positive and statistically significant at 10\% level. The value of $R^2$ is 14\
+
+\begin{table}
 \centering
- \includegraphics[width=0.75\linewidth]{figures/regression_yearly.jpeg}
-\caption{Regression results for Case I}
-\label{fig:lr_case1}
-\end{figure}
+\begin{tabular}{|lc|lc|}
+\hline
+\textbf{Dep. Variable:}    &     exp\_ret      & \textbf{  R-squared:         } &     0.137   \\
+\textbf{Model:}            &       OLS        & \textbf{  Adj. R-squared:    } &     0.136   \\
+\textbf{Method:}           &  Least Squares   & \textbf{  F-statistic:       } &     159.1   \\
+\textbf{Log-Likelihood:} &    6768.9 & \textbf{  Prob (F-statistic):} &  7.34e-65   \\
+\textbf{No. Observations:} &        2013      & \textbf{  AIC:               } & -1.353e+04  \\
+\textbf{Df Residuals:}     &        2010      & \textbf{  BIC:               } & -1.351e+04  \\
+\textbf{Df Model:}         &           2      & \textbf{                     } &             \\
+\hline
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{|l|cccccc|}
+\hline
+
+                   & \textbf{coef} & \textbf{std err} & \textbf{t} & \textbf{P$>$$|$t$|$} & \textbf{[0.025} & \textbf{0.975]}  \\
+\hline
+\textbf{Intercept} &       0.0004  &        0.000     &     1.975  &         0.048        &     2.55e-06    &        0.001     \\
+\textbf{SMB}       &       0.0051  &        0.000     &    14.116  &         0.000        &        0.004    &        0.006     \\
+\textbf{HML}       &       0.0045  &        0.000     &    11.446  &         0.000        &        0.004    &        0.005     \\
+\hline
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{|lc|lc|}
+\hline
+\textbf{Omnibus:}       & 226.654 & \textbf{  Durbin-Watson:     } &    2.020  \\
+\textbf{Prob(Omnibus):} &   0.000 & \textbf{  Jarque-Bera (JB):  } & 1579.960  \\
+\textbf{Skew:}          &  -0.271 & \textbf{  Prob(JB):          } &     0.00  \\
+\textbf{Kurtosis:}      &   7.306 & \textbf{  Cond. No.          } &     2.09  \\
+\hline
+\end{tabular}
+\caption{Regression Results for Case II}
+\label{table:lr_case2}
+\end{table}
+
+ 
+The table \ref{table:lr_case2} shows the value of alpha to be 0.02\%, which is also positive. Also, the coefficients of the two factors, SMB and HML, are positive and statistically significant at 10\% level. The value of $R^2$ is 16.7\%.
 
 
-The table \ref{fig:lr_case1} shows the value of alpha (excess return) to be 0.01\%, which is positive. Also, the coefficients of the two factors, SMB and HML, are positive and statistically significant at 10\% level. The value of $R^2$ is 14\
-\begin{figure}[h!] 
+\begin{table}
 \centering
- \includegraphics[width=0.75\linewidth]{figures/regression_llf10.jpeg}
-\caption{Regression results for Case II}
-\label{fig:lr_case2}
-\end{figure} 
-The table \ref{fig:lr_case2} shows the value of alpha to be 0.02\%, which is also positive. Also, the coefficients of the two factors, SMB and HML, are positive and statistically significant at 10\% level. The value of $R^2$ is 16.7\%.
+\begin{tabular}{|lc|lc|}
+\hline
+\textbf{Dep. Variable:}    &     exp\_ret      & \textbf{  R-squared:         } &     0.074   \\
+\textbf{Model:}            &       OLS        & \textbf{  Adj. R-squared:    } &     0.074   \\
+\textbf{Method:}           &  Least Squares   & \textbf{  F-statistic:       } &     131.1   \\
+\textbf{Log-Likelihood:} &    10373. & \textbf{  Prob (F-statistic):} &  1.64e-55   \\
+\textbf{No. Observations:} &        3272      & \textbf{  AIC:               } & -2.074e+04  \\
+\textbf{Df Residuals:}     &        3269      & \textbf{  BIC:               } & -2.072e+04  \\
+\textbf{Df Model:}         &           2      & \textbf{                     } &             \\
+\hline
+\end{tabular}
 
-\begin{figure}[h!] 
-\centering
- \includegraphics[width=0.75\linewidth]{figures/regression_llf5.jpeg}
-\caption{Regression results for Case III}
-\label{fig:lr_case3}
-\end{figure} 
+\bigskip
 
-The table \ref{fig:lr_case3} shows the value of alpha (excess return) to be 0.01\%, which is also positive. Also, the coefficients of the two factors, SMB and HML, are positive and statistically significant at 5\% level. The value of $R^2$ is 0.36\%, which is significantly low.
+\begin{tabular}{|l|cccccc|}
+\hline
+                   & \textbf{coef} & \textbf{std err} & \textbf{t} & \textbf{P$>$$|$t$|$} & \textbf{[0.025} & \textbf{0.975]}  \\
+\hline
+\textbf{Intercept} &       0.0003  &        0.000     &     1.647  &         0.100        &    -5.57e-05    &        0.001     \\
+\textbf{SMB}       &       0.0042  &        0.000     &    13.358  &         0.000        &        0.004    &        0.005     \\
+\textbf{HML}       &       0.0028  &        0.000     &    10.217  &         0.000        &        0.002    &        0.003     \\
+\hline
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{|lc|lc|}
+\textbf{Omnibus:}       & 903.068 & \textbf{  Durbin-Watson:     } &     2.167  \\
+\textbf{Prob(Omnibus):} &   0.000 & \textbf{  Jarque-Bera (JB):  } & 78120.161  \\
+\textbf{Skew:}          &   0.243 & \textbf{  Prob(JB):          } &      0.00  \\
+\textbf{Kurtosis:}      &  26.933 & \textbf{  Cond. No.          } &      1.78  \\
+\hline
+\end{tabular}
+\caption{Regression Results for Case III}
+\label{table:lr_case3}
+\end{table}
+
+The table \ref{table:lr_case3} shows the value of alpha (excess return) to be 0.01\%, which is also positive. Also, the coefficients of the two factors, SMB and HML, are positive and statistically significant at 5\% level. The value of $R^2$ is 0.36\%, which is significantly low.

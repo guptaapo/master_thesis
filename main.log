@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.22)  31 MAY 2018 13:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.22)  31 MAY 2018 20:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -807,38 +807,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 
 pdfTeX warning: pdflatex (file ./figures/pnls_llf10.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->] <figures/regression_yearly.jpeg, id=508, 391.4625pt x 498.86375pt>
-File: figures/regression_yearly.jpeg Graphic file (type jpg)
-
-<use figures/regression_yearly.jpeg>
-Package pdftex.def Info: figures/regression_yearly.jpeg used on input line 265.
-
-(pdftex.def)             Requested size: 352.31625pt x 449.00368pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/regression_llf10.jpeg, id=509, 413.545pt x 507.8975pt>
-File: figures/regression_llf10.jpeg Graphic file (type jpg)
-
-<use figures/regression_llf10.jpeg>
-Package pdftex.def Info: figures/regression_llf10.jpeg used on input line 274.
-(pdftex.def)             Requested size: 352.31625pt x 432.70691pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/regression_llf5.jpeg, id=510, 407.5225pt x 508.90125pt>
-File: figures/regression_llf5.jpeg Graphic file (type jpg)
-
-<use figures/regression_llf5.jpeg>
-Package pdftex.def Info: figures/regression_llf5.jpeg used on input line 282.
-(pdftex.def)             Requested size: 352.31625pt x 439.98387pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (./conclusion.tex
+>]) (./conclusion.tex
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -852,26 +821,19 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28 <./figures/regression_yearly.jpeg>]
+[28]
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[29 <./figures/regression_llf10.jpeg>]
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[30 <./figures/regression_llf5.jpeg>]
+[29]
 Chapter 6.
 
 Underfull \vbox (badness 3849) has occurred while \output is active []
 
- [31
+ [30
 
 ])
 (./references.tex
@@ -881,7 +843,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32]
+[31]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -897,7 +859,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 / digital / insights / pdfs /
  []
 
-[33
+[32
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 36--37
@@ -923,7 +885,7 @@ Overfull \hbox (109.9293pt too wide) in paragraph at lines 46--47
  _ 554 _ 0653-[]-[]the-[]potential-[]and-[]limitations-[]of .
  []
 
-) <declaration-originality.pdf, id=571, 597.55246pt x 845.07718pt>
+) <declaration-originality.pdf, id=564, 597.55246pt x 845.07718pt>
 File: declaration-originality.pdf Graphic file (type pdf)
 
 <use declaration-originality.pdf>
@@ -934,7 +896,7 @@ File: declaration-originality.pdf Graphic file (type pdf)
 Package pdftex.def Info: declaration-originality.pdf used on input line 113.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
-<declaration-originality.pdf, id=574, page=1, 597.55246pt x 845.07718pt>
+<declaration-originality.pdf, id=567, page=1, 597.55246pt x 845.07718pt>
 File: declaration-originality.pdf Graphic file (type pdf)
 
 <use declaration-originality.pdf, page 1>
@@ -954,7 +916,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[34]
+[33]
 File: declaration-originality.pdf Graphic file (type pdf)
  <use declaration-originality.pdf, page 1>
 Package pdftex.def Info: declaration-originality.pdf, page1 used on input line 
@@ -972,17 +934,17 @@ File: declaration-originality.pdf Graphic file (type pdf)
 Package pdftex.def Info: declaration-originality.pdf, page1 used on input line 
 113.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
- [35 <./declaration-originality.pdf>]
+ [34 <./declaration-originality.pdf>]
 (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5083 strings out of 493029
- 73606 string characters out of 6136234
- 152305 words of memory out of 5000000
- 8423 multiletter control sequences out of 15000+600000
+ 5067 strings out of 493029
+ 73142 string characters out of 6136234
+ 156302 words of memory out of 5000000
+ 8411 multiletter control sequences out of 15000+600000
  31299 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,19n,44p,1300b,458s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1002,10 +964,10 @@ exmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on main.pdf (45 pages, 1490485 bytes).
+Output written on main.pdf (44 pages, 1389991 bytes).
 PDF statistics:
- 675 PDF objects out of 1000 (max. 8388607)
- 250 compressed objects within 3 object streams
+ 669 PDF objects out of 1000 (max. 8388607)
+ 248 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

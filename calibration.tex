@@ -1,0 +1,36 @@
+%% ----------------------------------------------------------------------------
+%% ----------------------------------------------------------------------------
+\newpage
+\chapter{Calibration of Model}
+Once the strategies described in the previous chapter are used to compute the performance, probabilities, and decisions for both the fundamentalists and chartists, the next step is to use these intermediate results for calibration of the model. The SABM model can calculate and predict mean and volatility for the returns using historical data. In this calculation, the model makes use of market parameters as described in equation \ref{prob_eq}, \ref{exp_ret} and \ref{exp_var}. These parameters define the blueprint for the models. These parameters are unknown apriori and need to be estimated. The parameters are estimated in order to calibrate the model to follow the behavior of the market. The task is to choose a specific set of values for the market parameters to statistically match the predicted values with the real values for the historical data. The market parameters to be calibrated in the SABM model are $T$, $\tau$, $\frac{N_{f}\mu}{S}$, $\frac{N_{c}\mu}{S}$, and $\frac{N_{f}\sigma^2}{S}$. For ease of notification in the rest of thesis, we call $\frac{N_{f}\mu}{S}$ as $f\_ratio$, $\frac{N_{c}\mu}{S}$ as $c\_ratio$ and $\frac{N_{f}\sigma^2}{S}$ as $f\_var\_ratio$.
+
+In theory, there exist different ways to estimate the parameters. However, some methods are preferred over the others, because they result in estimators that have good statistical properties. To calibrate our model, we make some statistically justified assumptions on predicted daily returns. According to the \textbf{Central Limit Theorem}, $r_{t+1}$  (equation \ref{exp_ret}) is approximately normally distributed, when the outstanding shares ($S$) have the same real returns within an in-sample window, whose length is $w_{i2}$. The calibration of this SABM is much more efficient than the Genetic algorithm approach because we need to analyze with P/E ratio based trading strategies and trend following trading strategies just once. After storing the $P(k,t)$ and $Y(k,t)$ for whole in-sample length, the calibration is nothing but a normal numerical optimization or estimation problem. In order to do calibration there exist two popular methods: Maximum likelihood estimation and Least square method.
+As the least square method is used mostly for the linear models, maximum likelihood estimation method suits the best to estimate market parameters.
+
+
+\section{Maximum likelihood estimation}
+Maximum likelihood estimation is a method that determines values for the parameters of a model such that they maximise the likelihood that the process described by the model produced the data that were actually observed \cite{a7}. The likelihood is probability of observed data given a specific model i.e. $P(data|model)$. Let $\mathcal{M}$ be the hyperspace for market parameters and $m$ be one set of , the maximum likelihood estimate (MLE), $m^*$ is computed as given below:
+\begin{align*}
+m^*\,=\,\arg\max_{m\in \mathcal{M}}{P(data | model(m))} \quad,
+\end{align*}
+where $data$ corresponds the actual returns ($rt$) calculated for historic data and $model$ corresponds to expected return ($\mu$) and volatility ($\sigma$) predicted using SABM. The predicted values for return and volatility depends on market parameters, $m$ and are different for each day of the in-sample period. Therefore, in order to calculate the likelihood, joint probability for all days is computed. Assuming returns for each day($i$) to be statistically independent distributed, the joint probability of the daily returns becomes the product of all returns individually as shown below:
+\begin{align*}
+P(data | model(m)) = \prod_{i} {P(rt_i | \mu_i(m), \sigma_i(m))}
+\end{align*}
+The MLE estimate computation modifies to:
+\begin{align*}
+m^*\,=\,\arg\max_{m\in \mathcal{M}}{\prod_{i} {P(rt_i | \mu_i(m), \sigma_i(m))}} \quad.
+\end{align*}
+
+The returns are approximately normally disributed which stated likelihood for each day to be:
+\begin{align*}
+P(rt_i | \mu_i(m), \sigma_i(m)) = \frac{1}{\sqrt{2\pi\sigma_i(m)^2}} \ \exp{\Big(\frac{-(rt_i - \mu_i(m))^2}{\sigma_i^2(m)} \Big)}  
+\end{align*}
+
+The joint likelihood stated above is difficult to calculate with full precision and that’s why it is usual approach to take the natural logarithm ($\log$) of the expression. The motive of using $\log$ is that it converts product into summation. Also, $\log$ is monotonically increasing function and thus, does not effect the maximization fo likelihood. Taking $\log$ and replacing likelihood with normal distribution, the MLE ($m^*$) can be computed as follows:
+\begin{equation} \label{llf}
+m^*\,=\,\arg\max_{m\in \mathcal{M}}{\sum_{i} {-0.5\log{2\pi} - \log{\sigma_i(m)} - \Big(\frac{(rt_i - \mu_i(m))^2}{\sigma_i^2(m)} \Big)}} \quad.
+\end{equation}
+The equation \ref{llf} computes the log-likelihood function for the given values of actual return and predicted values of expected return and volatility. Now, the estimation of calibration parameters is nothing but a normal numerical optimization problem.
+
+Let us assume that we calibrate the model using real returns and performance for days in a time period between $t1$ and $t2$, then we can make the prediction for days in the time period of $t2+1$ to $t2+x$. The next step is to verify the predictability of the model in [$t2+1$, $t2+x$]. For this we recalibrate the model to make predictions in [$t2+x+1$, $t2+x+x$] i.e. we do the MLE again but now with data in [$t1+x$, $t2+x$]. Here $x$ refers to the time period for which we make predictions using same calibration parameters. By re-calibrating the model for each time period of $x$, we get the predicted returns and variances from $t2$ to the end of the time of your data.

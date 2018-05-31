@@ -1,0 +1,25 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Our Approach}{3}
+\contentsline {section}{\numberline {1.2}Thesis Organization}{5}
+\contentsline {chapter}{\numberline {2}Model for the Market}{6}
+\contentsline {section}{\numberline {2.1}Statistical Agent-Based Models (SABM)}{6}
+\contentsline {subsection}{\numberline {2.1.1}Foundation of our SABM}{7}
+\contentsline {subsection}{\numberline {2.1.2}Steps for Model Creation}{7}
+\contentsline {subsection}{\numberline {2.1.3}Computation of $P(k,t)$ and $Y(k,t)$}{10}
+\contentsline {chapter}{\numberline {3}Calibration of Model}{12}
+\contentsline {section}{\numberline {3.1}Maximum likelihood estimation}{13}
+\contentsline {chapter}{\numberline {4}Statistical Analysis}{15}
+\contentsline {section}{\numberline {4.1}Trading strategy}{15}
+\contentsline {section}{\numberline {4.2}Evaluation of trading strategy}{16}
+\contentsline {subsection}{\numberline {4.2.1}Comparison with random strategies}{16}
+\contentsline {subsection}{\numberline {4.2.2}Linear Regression}{17}
+\contentsline {chapter}{\numberline {5}Experiments and Results}{18}
+\contentsline {section}{\numberline {5.1}Back-testing}{18}
+\contentsline {section}{\numberline {5.2}Calibration results}{20}
+\contentsline {subsection}{\numberline {5.2.1}Case I}{21}
+\contentsline {subsection}{\numberline {5.2.2}Case II}{21}
+\contentsline {subsection}{\numberline {5.2.3}Case III}{23}
+\contentsline {section}{\numberline {5.3}Statistical analysis results}{23}
+\contentsline {subsection}{\numberline {5.3.1}Comparison with Random strategies}{24}
+\contentsline {section}{\numberline {5.4}Linear regression}{27}
+\contentsline {chapter}{\numberline {6}Conclusion}{31}

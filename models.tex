@@ -1,0 +1,142 @@
+%% ----------------------------------------------------------------------------
+%% ----------------------------------------------------------------------------
+\newpage
+\chapter{Model for the Market}
+
+This chapter gives the detailed information about how we developed the model. The aim is to develop a model to simulate the behavioral impact of individual agents in the market. In order to build our model, we use the concept of computer modeling. It is the process by which a computer is used to develop a mathematical model of a complex system or process. Nowadays computer modeling has proven to be an efficient way to measure the effect of different factors and also to simplify complex real-world processes. Models can be designed to better explain or understand historical data, to predict future behavior or perform virtual experiments, or to make decisions about courses of action based on the likelihood of expected outcomes\cite{a8}. In the following sections, we describe our model, SABM and the steps to implement it.
+
+
+\section{Statistical Agent-Based Models (SABM)}
+SABM is an efficient way to take into account different factors, calibrate and finally, optimize it to generate the results which can be useful for the real-time problems. It is designed to understand the historical data and predict the future behavior or performance of the market. In general, it is relatively easier to reproduce some stylised facts of asset returns in stock markets, such as fat-tail distributed returns, the absence of autocorrelation in returns, volatility clustering, and so on, but it is considered difficult to reproduce/calibrate bubbles, crashes and the change of regimes. We propose a Statistical agent based Models (SABM), which could overcome these difficulties and also relatively straightforward and easy to calibrate. Further, in this section, we describe the agents/strategies used in our model and also the founding rules of our model. In our model, we consider two classes of agents in the SABM, as all other ABMs do:
+\begin{enumerate}
+\item \textbf{Fundamentalists:-} These agents buy and hold a stock when it is cheap and will sell it and hold cash when the stock is expensive. They use the P/E ratio to determine if the stock is under-valued or over-valued.
+
+\item \textbf{Chartists:-} These agents use a comparison of fast moving average (MA) and a slow moving average of prices to identify trends. If the fast MA is higher than the slow MA they will buy and hold; otherwise, they will close positions and hold cash. All agents use stop-loss to manage risks.
+
+\end{enumerate}
+
+\subsection{Foundation of our SABM}
+
+Although the SABM looks to be simple, it can still generate rich dynamics. In a random-walk market phase when the P/E ratio is moderate, the market is in equilibrium: fundamentalists will buy and sell with the
+same probability and the price trend is not obvious so the chartists will also buy and sell with the same probability. The random-walk phase will continue. \par
+When some stochastic positive price jumps occur, a trend will emerge in the market. A positive feedback loop will make more and more chartists enter the market, as long as the P/E ratio is not extremely
+high and the trend is not totally destroyed by the fundamentalists selling their shares. Hence, a bull market is formed and continues. \par
+When the bull market continues, the P/E ratio will increase until it reaches a critical point: some fundamentalists will start to sell and cause some price drops. There could be some oscillations because of the oscillations of the P/E ratio. If there is a big random price drop, both fundamentalists and chartists will sell out their stocks to stop loss and they will create a positive feedback loop to cause a crash
+before a bear market. \par
+When the bear market goes on until the P/E ratio is low enough, the fundamentalists will enter to buy and hold shares to stop the bear market.
+
+
+\subsection{Steps for Model Creation} \label{steps}
+
+In order to work with this model we use following notation and strategy:
+
+%\item
+\begin{enumerate}
+\item {Let S be the total number of shares outstanding of the stock.}
+
+\item {Let the total number of fundamentalists be $N_f$, and that of the chartists be $N_c$. Both of them will 100\% in the market or 100\% out.}
+
+\item {If one decides to enter, her capacity of buying and holding shares is $n_i$, related to her wealth and knowledge and so on. We assume it is stationary, distributed with some mean $\mu$ and variance $\sigma$}
+
+\item {Agents learn from the history with a window length $w_{i1}$ (in-sample window 1) to find the best trading strategy to use. Of course, the fundamentalists and the chartists have different styles of strategies that we use in our model.
+At any time, the fundamentalists try to find a good P/E ratio denoted by $x$ to enter or exit, and a good stop-loss ratio, $h$ to manage their risks. The chartists use a fast moving average, denoted by $MA_f$, and a slow moving average, denoted by $MA_s$ to enter or exit, and they need also a good stop-loss ratio, $h$ to manage risks. So the fundamentalists look at the pairs such as ($x$,$h$), while chartists look at triplets such as ($MA_f$, $MA_s$, $h$) to make decisions.}
+
+\item {With any pair ($x$,$h$) or triplet ($MA_f$, $MA_s$, $h$) one can get back-test results in $w_{i1}$ . We assume the agents pick trading strategies with mean-variance preferences. Let $r_k(t)$ and $v_k(t)$ be the average return and the standard deviation of returns of the back-test with parameter pair $k$ (for fundamentalists) or triplet $k$ (for chartists), at time $t$. }
+
+\item {The risk aversion of agents is denoted by $\lambda$. The expected utility gained by the trading strategy $k$ at time $t$ will be a function of $r_k (t)-\lambda v_k (t)$.
+}
+
+\item {For convenience, we assume the probability of choosing the trading strategy $k$ is proportional to, 
+\begin{equation}
+\exp{\frac{r_{k}(t)-\lambda v_{k}(t)}{T}} \quad,
+\end{equation}
+
+where $T$ is a temperature determining how sophisticated the traders are and how intensively the traders are coupled.
+}
+
+\item {We assume the risk aversion $\lambda$ is exponentially distributed with a parameter $\tau$.
+}
+
+\item {We can get the probability of any trading strategy being picked, which is denoted by
+
+\begin{equation} \label{prob_eq}
+P(k,t) = P(r_k(t), v_k(t), T, \tau)
+\end{equation}
+
+where $r_k (t)$ and $v_k (t)$ can be extracted from historic data and $T$ and $\tau$ are model parameters.
+}
+
+\item {At any time t, a trading strategy will tell agents to hold or not to hold the stock. Let $Y(k,t)$ be the output of trading strategy at time $t$ according to the price context at $t$, which can be 0 (not to hold) or 1 (to hold).
+}
+
+\item {$D_f$ denotes the demand of fundamentalists. We thus have
+
+\begin{equation}
+E(D_f) = N_f\mu \sum_{k} P(k,t)\ Y(k,t), and
+\end{equation}
+
+\begin{equation}
+VAR(D_f) = N_f\sigma^2 \Big(\sum_{k}P(k,t)\ Y^2(k,t)- \big(\sum_{k} P(k,t)\ Y(k,t)\big)^2 \Big)
+\end{equation}
+}
+
+\item {Similarly, the demand of chartists, $D_c$, can be calculates as
+\begin{equation}
+E(D_c) = N_c\mu \sum_{k} P(k,t)\ Y(k,t) , and
+\end{equation}
+
+\begin{equation}
+VAR(D_c) = N_c\sigma^2 \Big(\sum_{k}P(k,t)\ Y^2(k,t)- \big(\sum_{k} P(k,t)\ Y(k,t)\big)^2 \Big)
+\end{equation}
+Note: fundamentalists and chartists have different values for $P(k,t)$ and $Y(k,t)$.
+}
+
+\item {Demand of agent, $D$, is calculated as:
+
+\begin{equation}
+ D = D_{f} + D_{c}
+\end{equation}
+ 
+Therefore,
+\begin{equation}
+E(D) = N_f\mu\ \sum_{k}P(k,t)\ Y(k,t) + N_c\mu\ \sum_{k'}P'(k',t)\ Y'(k',t), 
+\end{equation}
+and,
+\begin{equation}
+\begin{split}
+VAR(D) = N_f\sigma^2 & \Big(\sum_{k}P(k,t)\ Y^2(k,t)- \big(\sum_{k} P(k,t)\  Y(k,t)\big)^2 \Big) \\ & + N_c\sigma^2 \Big(\sum_{k'}P'(k',t)\ Y'^2(k',t)- \big(\sum_{k} P'(k',t)\ Y'(k',t)\big)^2 \Big) \  .
+\end{split}
+\end{equation}
+}
+
+\item {If we denote the stock price at $t$ by $X(t)$, price discovery process is calculated as:
+
+\begin{equation}
+D\ X(t) = S\ X(t + 1)
+\end{equation}
+
+The return of the stock at time $t + 1$ is
+\begin{equation} 
+r_{t+1} =\frac{D}{S}-1 ,
+\end{equation}
+Therefore, expected value and variance of return can be calculated as: 
+\begin{equation} \label{exp_ret}
+E(r_{t+1}) =\frac{N_{f}\mu}{S} \sum_{k}P(k,t)\ Y(k,t) +\frac{N_{c}\mu}{S} \sum_{k'}P'(k',t)\ Y'(k',t) - 1
+\end{equation}
+
+\begin{equation} \label{exp_var}
+\begin{split}
+VAR(r_{t+1}) =\frac{N_f\sigma^2}{S^2} & \Big(\sum_{k}P(k,t)\ Y^2(k,t)- \big(\sum_{k} P(k,t)\  Y(k,t)\big)^2 \Big) \\ & + \frac{N_c\sigma^2}{S^2} \Big(\sum_{k'}P'(k',t)\ Y'^2(k',t)- \big(\sum_{k} P'(k',t)\ Y'(k',t)\big)^2 \Big)
+\end{split}
+\end{equation}
+
+where magnitudes of $N_{f}$ and $N_{c}$ are big enough. Now, following these steps, we can compute expected value and variance of the future returns. 
+}
+
+\end{enumerate}
+
+\subsection{Computation of $P(k,t)$ and $Y(k,t)$}
+The computation of $P(k,t)$ and $Y(k,t)$ is required for prediction of returns for different trading strategies. As explained earlier, we make use of two strategies for agents: Chartists and Fundamentalists. Using these different strategies, we use \textit{back-testing} to compute expected annual return ($r_k(t)$) and standard deviation ($v_k(t)$) using historic data. In addition, we also compute holding decisions ($Y(k,t)$) for both strategies. Now, from equation \ref{prob_eq}, we know that $P(k,t)$ is dependent on $r_k(t)$, $v_k(t)$, $T$ and $\tau$. The probality of using a particular strategy, $k$, at time $t$ is calculated as:
+\begin{equation} \label{prob_comp}
+P(k,t) = \exp(r_k(t) / T) * \tau / (\tau + v_k(t) / T) 
+\end{equation}
